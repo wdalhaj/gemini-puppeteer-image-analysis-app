@@ -54,7 +54,7 @@ This Node.js application uses Google's Gemini AI to analyze product images from 
    ```
 
 6. **Configure the Application**
-   - Open `src/puppeteer-screenshot.js` and adjust the options (browser, sleep time, screen size, etc.).
+   - Open `puppeteer-screenshot.js` and adjust the options (browser, sleep time, screen size, etc.).
    - Modify the URL in `app.js` to capture screenshots from your desired website.
 
 7. **Run the Application**
