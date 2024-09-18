@@ -1,0 +1,38 @@
+[
+  {
+    "arabic_name": "سستيفيا",
+    "english_name": "Stevioana Low Calorie Sweetener",
+    "price": "9.40",
+    "category": "Sweetener"
+  },
+  {
+    "arabic_name": "تاسالي بطاطس شيبس",
+    "english_name": "Tasali Potato Chips Citrus",
+    "price": "6.94",
+    "category": "Chips"
+  },
+  {
+    "arabic_name": "كورن فليكس",
+    "english_name": "Nestle Country Corn Flakes",
+    "price": "19.94",
+    "category": "Breakfast Cereal"
+  },
+  {
+    "arabic_name": "دوف شامبو / بلسم",
+    "english_name": "Dove Shampoo / Conditioner",
+    "price": "8.94",
+    "category": "Hair Care"
+  },
+  {
+    "arabic_name": "رز بسمتي هندي",
+    "english_name": "Al Rajhi Indian Basmati Rice",
+    "price": "59.94",
+    "category": "Rice"
+  },
+  {
+    "arabic_name": "زيت دوار الشمس",
+    "english_name": "Shahees Corn Oil",
+    "price": "59.94",
+    "category": "Cooking Oil"
+  }
+]

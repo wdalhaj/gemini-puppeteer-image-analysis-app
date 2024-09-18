@@ -15,7 +15,7 @@ import { GoogleAIFileManager } from "@google/generative-ai/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import 'dotenv/config';
 import  {takeScreenshot}  from "./puppeteer-screenshot.js";
-
+import { exportToJson } from "./toJson.js";
 async function main() {
 
   console.log( process.cwd());
@@ -41,9 +41,13 @@ async function main() {
     console.log(`Uploaded file ${uploadResult.file.displayName} as: ${uploadResult.file.uri}`);
 
     const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+    
+    // set the model
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    
+    // send the prompt and the image to the model
     const result = await model.generateContent([
-      "export json format of this image from catalog page describing each product arabic and english name, prices and categories.",
+      "export json format of this image from catalog page describing each product arabic and english name, prices and categories. dont include json code blocks",
       {
         fileData: {
           fileUri: uploadResult.file.uri,
@@ -51,7 +55,12 @@ async function main() {
       },
     ]);
 
-    console.log(result.response.text());
+    //  clean the result text from the annoying code blocks, might be other better way to do it but thsi will work for now
+    let cleanedResponse = result.response.text();
+    cleanedResponse = cleanedResponse.replace("```json\n", "");
+    cleanedResponse = cleanedResponse.replace("```", "");
+  
+    exportToJson(cleanedResponse, './output.json');
   } catch (error) {
     console.error('An error occurred:', error);
   }
