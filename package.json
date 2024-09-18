@@ -1,0 +1,17 @@
+{
+  "name": "gemini-puppeteer-image-analysis-app",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmed Alhaj",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.19.0",
+    "dotenv": "^16.4.5",
+    "puppeteer": "^23.3.1"
+  }
+}
