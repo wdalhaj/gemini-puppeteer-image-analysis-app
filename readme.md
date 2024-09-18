@@ -62,3 +62,4 @@ This Node.js application uses Google's Gemini AI to analyze product images from 
    node src/app.js
    ```
 
+Thnaks!
