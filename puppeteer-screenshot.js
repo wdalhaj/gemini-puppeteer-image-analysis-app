@@ -22,7 +22,7 @@
 import puppeteer from 'puppeteer';
 
 export async function takeScreenshot(url, outputPath) {
-
+  try {
   // launch browser
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -36,25 +36,21 @@ export async function takeScreenshot(url, outputPath) {
   await page.setViewport({ width: 1740, height: 1141 });
 
   // go to the url
-  await page.goto(url);
+  await page.goto(url,{ waitUntil: 'networkidle0' });
   
   // waiting for page to load, increase if sh!tty internet connection (Adjust based on your needs)
   await sleep(5000);
 
-  
-  
-  // wait for full screen button to appear and click on it, the script actually works fine without full screen but for more reliable result.
-  await page.waitForSelector('[aria-label="Full screen"]');
-  await page.click('[aria-label="Full screen"]');
-
-  // just in case full screen operation took more time.
-  await sleep(2000);
 
   // take the screenshot
   await page.screenshot({ path: outputPath, fullPage: true , quality: 100, type: 'jpeg'});
 
   // close browser
   await browser.close();
+} catch (error) {
+  console.error('Error taking screenshot:', error);
+  throw error;
+}
 }
 
 // sleep function 

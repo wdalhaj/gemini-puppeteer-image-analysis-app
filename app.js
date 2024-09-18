@@ -17,9 +17,12 @@ import 'dotenv/config';
 import  {takeScreenshot}  from "./puppeteer-screenshot.js";
 
 async function main() {
+
+  console.log( process.cwd());
+  
   try {
     // Take screenshot 
-    const screenshotPath = './screenshot.jpg';
+    const screenshotPath = `./screenshot.jpg`;
     const websiteUrl = 'https://player.flipsnack.com/?hash=NUI2OEU3Q0M1QTgraDlmNm1tY3J6cA=='; // Replace with your target website
     await takeScreenshot(websiteUrl, screenshotPath);
     console.log('Screenshot taken successfully');
@@ -30,6 +33,7 @@ async function main() {
     const uploadResult = await fileManager.uploadFile(
       screenshotPath,
       {
+        displayName: 'screenshot.jpg',
         mimeType: 'image/jpeg',
       },
     );
