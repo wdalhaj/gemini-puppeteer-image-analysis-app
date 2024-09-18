@@ -39,7 +39,7 @@ This Node.js application uses Google's Gemini AI to analyze product images from 
    ```
 
 3. **Set Up Environment Variables**
-   Create a `.env` file in the project root and add your Google API key (get the key from [Google AI Studio]https://aistudio.google.com/app/apikey): 
+   Create a `.env` file in the project root and add your Google API key get the key from [Google AI Studio](https://aistudio.google.com/app/apikey): 
    ```
    API_KEY=your_google_api_key_here
    ```
