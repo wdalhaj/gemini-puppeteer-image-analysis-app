@@ -59,7 +59,7 @@ This Node.js application uses Google's Gemini AI to analyze product images from 
 
 7. **Run the Application**
    ```
-   node src/app.js
+   npm start
    ```
 
 Thnaks!
